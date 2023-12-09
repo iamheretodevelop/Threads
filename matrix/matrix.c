@@ -3,14 +3,20 @@
 #include <pthread.h>
 #include <time.h>
 
-int matA[MAX][MAX]; 
-int matB[MAX][MAX]; 
+#define MAX 3 // Change this value to the desired matrix size
+
+int matA[MAX][MAX];
+int matB[MAX][MAX];
 
 int matSumResult[MAX][MAX];
-int matDiffResult[MAX][MAX]; 
-int matProductResult[MAX][MAX]; 
+int matDiffResult[MAX][MAX];
+int matProductResult[MAX][MAX];
 
-int MAX;
+// Structure to hold the coordinates of a matrix cell
+typedef struct {
+    int row;
+    int col;
+} MatrixCell;
 
 void fillMatrix(int matrix[MAX][MAX]) {
     for(int i = 0; i<MAX; i++) {
